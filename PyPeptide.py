@@ -131,9 +131,14 @@ def setPATH(plinstall_Tath):
 
 def netMHCpanInstall(path):
     install_T_Shell()
-    netMHCpanExtract(path)
+    try:
+        netMHCpanExtract(path)
+    except:
+        print("Please install netMHCpan from https://services.healthtech.dtu.dk/service.php?NetMHCpan-4.1")
     DataDownload(path)
     DataExtract(path)
     ChangeDir(path)
     netMHCpanTest(path)
     setPATH(path)
+
+    
