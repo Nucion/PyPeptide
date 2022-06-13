@@ -130,7 +130,7 @@ def setPATH(plinstall_Tath):
 
 
 def netMHCpanInstall(path):
-    install_T_Shell()
+    #install_T_Shell()
     try:
         netMHCpanExtract(path)
     except:
@@ -141,4 +141,4 @@ def netMHCpanInstall(path):
     netMHCpanTest(path)
     setPATH(path)
 
-    santo_grial ="../netMHCpan -p test.txt -BA -a HLA-A01:01 > final_out.txt"
+    
