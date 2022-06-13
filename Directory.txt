@@ -1,0 +1,1 @@
+cd /mnt/c/Users/nicol/OneDrive/Escritorio/Proyectos\ y\ Ejercicios/Ing\ Comp\ 7mo\ Semestre/Sistemas_Inteligentes/netMHCpan-py/
