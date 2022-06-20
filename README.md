@@ -18,8 +18,8 @@ You can either:
 - Use the nerMHCpanInstall function, providing the path for the destination
 - Use each of the sub functions separately for a more step-by step installation. Each needs the same path to be provided
 
-## Usage of netMHCpan
-Once installed this library provides functions to fascilitate the usage of netMHCpan. (still a work in progress)
+## Usage of netMHCpan:
+##### Once installed this library provides functions to fascilitate the usage of netMHCpan. (still a work in progress)
 -
 -
 -
