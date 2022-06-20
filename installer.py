@@ -2,6 +2,7 @@ import tarfile
 import requests 
 from os import remove
 import os
+#import or install tqdm
 try:
     from tqdm import tqdm
 except ModuleNotFoundError:
@@ -10,9 +11,8 @@ except ModuleNotFoundError:
     print("installing tqdm...")
 import subprocess 
 
-path = "/mnt/c/Users/nicol/Documents/Final_Test"
 
-
+# Check if T-shell is updated. Install if not
 def install_T_Shell():
     print('installing tcsh...')
     subprocess = subprocess.Popen("tcsh --version", shell=True, stdout=subprocess.PIPE)
@@ -21,7 +21,7 @@ def install_T_Shell():
         os.system("sudo apt-get install tcsh")
 
 
-
+# Extract netMHCpan into specified directory. Then Remove tar
 def netMHCpanExtract(path):
 
     file1 = tarfile.open(path + '/netMHCpan-4.1b.Linux.tar.gz') 
@@ -33,7 +33,7 @@ def netMHCpanExtract(path):
     print ("Removed!")
 
 
-# #---------------------------------------------------------------------------------
+# Download data.tar from netMHCpan webpage
 def DataDownload(path):
     print("Downloading Data...")
 
@@ -49,7 +49,7 @@ def DataDownload(path):
 
     print("Downloaded!")
 
-
+# Delete data file in linux folder. Extract data.tar, then delete it
 def DataExtract(path):
     print("Removing trash Data file...")
     remove(path + "/netMHCpan-4.1/Linux_x86_64/data")
@@ -64,7 +64,7 @@ def DataExtract(path):
     print("Removed!")
 
 
-
+# Change 'setenv NHOME', 'setenv TMPDIR' and 'setenv NETMHCpan' lines in script
 def ChangeDir(path):
     with open(path + "/netMHCpan-4.1/netMHCpan") as f:
         script = f.read().splitlines()
@@ -108,7 +108,7 @@ def ChangeDir(path):
 
 
 
-#----------------------------------------------------------------------
+# Run tests specified on Read.me
 def netMHCpanTest(path):
 
     print("tests:")
@@ -123,12 +123,12 @@ def netMHCpanTest(path):
     os.system("cd "+ path + "/netMHCpan-4.1/test/ && ../netMHCpan -p test.pep -BA -xls -a HLA-A01:01,HLA-A02:01 -xlsfile my_NetMHCpan_out.xls")
     print("Completed (5/5)")
 
+# Set path to directory
+def setPATH(path):
+    os.environ["PATH"] = (os.environ["PATH"] + ":" + path + "/netMHCpan-4.1")
+    os.system("echo $PATH")
 
-def setPATH(plinstall_Tath):
-    os.envirolinstall_Tn["PATH"] = (os.environ["PATH"] + ":" + path + "/netMHCpan-4.1")
-    os.systemlinstall_T("echo $PATH")
-
-
+# General function
 def netMHCpanInstall(path):
     #install_T_Shell()
     try:
