@@ -8,6 +8,7 @@ Library for installation and usage of netMHCpan algorithm for predicton of pepti
 ##  Prerequisites for usage of library:
 - install tqdm library (will authomatically do so regardless).
 - install tcsh enviroment (this library contains a function to do so).
+- install pandas library
 
 ## Installing netMHC pan:
 - Check t-shell (tcsh) is correctly installed.
@@ -20,9 +21,10 @@ You can either:
 
 ## Usage of netMHCpan:
 ##### Once installed this library provides functions to fascilitate the usage of netMHCpan. (still a work in progress)
--
--
--
+For this library to work, the input csv must be in the 'my_directory' folder. This is created in the inport_file() function, so be sure to use it the first time.
+Once everything is set up, you can either:
+- Use the complete_csv function, providing path to the csv and folder where netMHCpan is (the same as with the installe functions)
+- Use each function separately, check how the complete_csv function uses them for more detail with their parameters
 
 # Authors
 - Nicolas Leszezyñski - Univ. Católica de Córdoba
